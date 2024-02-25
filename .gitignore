@@ -1,5 +1,12 @@
 .idea
+**/.vscode
 
 **/target/
 
+**/.angular
+**/dist
+**/tmp
+**/out-tsc
+**/bazel-out
+**/node_modules
 **/package-lock.json
