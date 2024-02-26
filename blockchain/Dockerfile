@@ -17,4 +17,8 @@ RUN printf '#!/bin/sh\n ganache-cli -h 0.0.0.0 --mnemonic "concert ladder declin
 # Set the /app directory as working directory
 WORKDIR /app
 
+# Let You know that port 8545 is exposed for binding
+EXPOSE 8545
+
+# Start container via script
 CMD ["./startscript.sh"]
