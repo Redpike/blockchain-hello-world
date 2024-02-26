@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "application.blockchain.settings.gas-price",
+      "type": "java.lang.String",
+      "description": "Gas price for Blockchain. Depends on supply and demand for the network's validation requests."
+    },
+    {
+      "name": "application.blockchain.settings.gas-limit",
+      "type": "java.lang.String",
+      "description": "Maximum amount of work you're estimating a validator do on a particular transaction."
+    },
+    {
+      "name": "application.blockchain.account.address",
+      "type": "java.lang.String",
+      "description": "Account's address."
+    },
+    {
+      "name": "application.blockchain.account.private-key",
+      "type": "java.lang.String",
+      "description": "Account's private key."
+    }
+  ]
+}

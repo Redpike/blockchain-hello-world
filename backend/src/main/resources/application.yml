@@ -1,1 +1,9 @@
-
+application:
+  blockchain:
+    settings:
+      gas-price: 23_000_000_000
+      gas-limit: 8_000_000
+    account:
+      # Admin account for signing transactions in Blockchain
+      address: "0xbD004d9048C9b9e5C4B5109c68dd569A65c47CF9"
+      private-key: "0x91fd4e8a060cceff00ae5cde99d5b167179f724d9a424e24672e4200c7679c98"
