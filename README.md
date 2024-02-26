@@ -36,7 +36,7 @@ Technologies:
 ```text
 Angular 17.2.1
 Web3 x.x.x
-Metamask (Firefox or Chromium-based web browser) x.x.x
+Metamask (Firefox, Chromium-based or Opera)
 ```
 
 ## 2. Development Environment
