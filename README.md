@@ -122,6 +122,8 @@ cd ./backend
 java -jar target/blockchain-hello-world-1.0.0-SNAPSHOT.jar
 ```
 
+Open web browser [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
 ### 2.3. Frontend
 
 Install dependencies:

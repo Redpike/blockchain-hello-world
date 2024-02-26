@@ -22,6 +22,7 @@ class HelloWorldController {
     @GetMapping("/api/t4d/v1/{contractAddress}/hello-world/message")
     @Operation(
             method = "GET",
+            summary = "Get last message from Smart Contract",
             description = "Returns last message"
     )
     @ApiResponses(
@@ -39,6 +40,7 @@ class HelloWorldController {
     @PutMapping("/api/t4d/v1/{contractAddress}/hello-world/message")
     @Operation(
             method = "PUT",
+            summary = "Change value of message in Smart Contract",
             description = "Store new message in Blockchain"
     )
     @ApiResponses(
