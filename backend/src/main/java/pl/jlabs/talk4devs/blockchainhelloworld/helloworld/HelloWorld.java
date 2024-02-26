@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld.control;
+package pl.jlabs.talk4devs.blockchainhelloworld.helloworld;
 
 import java.math.BigInteger;
 import java.util.Arrays;

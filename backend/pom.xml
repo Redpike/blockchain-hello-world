@@ -71,7 +71,7 @@
                 <artifactId>web3j-maven-plugin</artifactId>
                 <version>${web3j.version}</version>
                 <configuration>
-                    <packageName>pl.jlabs.talk4devs.blockchainhelloworld.control</packageName>
+                    <packageName>pl.jlabs.talk4devs.blockchainhelloworld</packageName>
                     <nativeJavaType>true</nativeJavaType>
                     <outputFormat>java</outputFormat>
                     <abiSourceFiles>
