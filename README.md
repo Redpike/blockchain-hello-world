@@ -151,6 +151,10 @@ Open web browser [http://localhost:4200](http://localhost:4200)
 
 ### 3.2. Backend
 
+OpenAPI:
+
+![Swagger documentation](misc/swagger.png)
+
 Get last value of message:
 
 ```shell
