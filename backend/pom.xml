@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.j-labs.talk4devs</groupId>
-    <artifactId>blockchain-hello-world</artifactId>
+    <artifactId>blockchain-hello-world-backend</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Blockchain Hello World</name>
     <description>Blockchain integration via Web3j in Spring Boot application</description>
