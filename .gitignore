@@ -2,6 +2,10 @@
 **/*.iml
 **/.vscode
 
+**/artifacts
+**/cache
+**/typechain-types
+
 **/target/
 
 **/.angular

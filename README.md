@@ -78,7 +78,19 @@ cd ..
 
 ### 2.2. Backend
 
+Generate Smart Contract's classes and package:
 
+```shell
+cd ./backend
+mvn clean web3j:generate-sources package
+cd ..
+```
+
+Run application via console:
+```shell
+cd ./backend
+java -jar target/blockchain-hello-world-1.0.0-SNAPSHOT.jar
+```
 
 ### 2.3. Frontend
 
@@ -98,3 +110,7 @@ npm run start
 ```
 
 Open web browser [http://localhost:4200](http://localhost:4200)
+
+## 3. Testing
+
+// TODO
