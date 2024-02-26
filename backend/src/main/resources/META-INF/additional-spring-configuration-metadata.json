@@ -1,6 +1,11 @@
 {
   "properties": [
     {
+      "name": "application.blockchain.web3.url",
+      "type": "java.lang.String",
+      "description": "Url of Your local Blockchain."
+    },
+    {
       "name": "application.blockchain.settings.gas-price",
       "type": "java.lang.String",
       "description": "Gas price for Blockchain. Depends on supply and demand for the network's validation requests."

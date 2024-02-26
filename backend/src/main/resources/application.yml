@@ -1,5 +1,7 @@
 application:
   blockchain:
+    web3:
+      url: "http://localhost:18545"
     settings:
       gas-price: 23_000_000_000
       gas-limit: 8_000_000

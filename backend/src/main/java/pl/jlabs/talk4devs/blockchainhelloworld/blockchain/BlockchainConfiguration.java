@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld.configuration;
+package pl.jlabs.talk4devs.blockchainhelloworld.blockchain;
 
 import lombok.Data;
 
@@ -13,4 +13,6 @@ public class BlockchainConfiguration {
     private BlockchainSettings settings;
 
     private BlockchainAccount account;
+
+    private Web3Settings web3;
 }

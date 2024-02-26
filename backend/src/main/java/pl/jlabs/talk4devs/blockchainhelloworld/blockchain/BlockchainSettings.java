@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld.configuration;
+package pl.jlabs.talk4devs.blockchainhelloworld.blockchain;
 
 import lombok.Data;
 
