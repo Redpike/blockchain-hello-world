@@ -19,7 +19,7 @@ class HelloWorldController {
 
     private final HelloWorldService service;
 
-    @GetMapping("/api/t4d/v1/{contractAddress}/hello-world/message")
+    @GetMapping("/api/t4d/v1/hello-world/{contractAddress}/message")
     @Operation(
             method = "GET",
             summary = "Get last message from Smart Contract",
@@ -37,7 +37,7 @@ class HelloWorldController {
         return message.isBlank() ? ResponseEntity.internalServerError().build() : ResponseEntity.ok(message);
     }
 
-    @PutMapping("/api/t4d/v1/{contractAddress}/hello-world/message")
+    @PutMapping("/api/t4d/v1/hello-world/{contractAddress}/message")
     @Operation(
             method = "PUT",
             summary = "Change value of message in Smart Contract",
