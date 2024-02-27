@@ -27,17 +27,11 @@ export class Web3Component implements OnInit {
     // @ts-ignore
     const {ethereum} = window;
     ethereum.on('accountsChanged', (accounts: string[]) => {
-      console.log(accounts);
-      if (accounts.length) {
-        this.selectedAccount = accounts[0];
-        this.cdr.detectChanges();
-      }
+      this.fetchMetaMaskData().then();
     });
 
-    ethereum.on('chainChanged', async () => {
-      const chainId: bigint = await this.web3.eth.getChainId();
-      this.selectedChain = '' + chainId;
-      this.cdr.detectChanges();
+    ethereum.on('chainChanged', () => {
+      this.fetchMetaMaskData().then();
     });
   }
 
@@ -52,5 +46,7 @@ export class Web3Component implements OnInit {
       const balance: bigint = await this.web3.eth.getBalance(this.selectedAccount);
       this.balance = this.web3.utils.fromWei(balance, 'ether') + ' ETH';
     }
+
+    this.cdr.detectChanges();
   }
 }
