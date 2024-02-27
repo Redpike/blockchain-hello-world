@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HelloWorldComponent} from './hello-world.component';
 import {HelloWorldRoutingModule} from './hello-world-routing.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -9,6 +10,7 @@ import {HelloWorldRoutingModule} from './hello-world-routing.module';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     HelloWorldRoutingModule
   ]
 })

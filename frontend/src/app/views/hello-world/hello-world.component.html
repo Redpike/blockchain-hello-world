@@ -1,1 +1,18 @@
 <div>Hello World</div>
+
+<div class="container form">
+  <form [formGroup]="form">
+    <div class="method message">
+      <button (click)="getMessage()">Get message</button>
+    </div>
+
+    <div class="method update">
+      <input [formControl]="messageFC">
+      <button (click)="updateMessage()">Update</button>
+    </div>
+  </form>
+</div>
+
+<div class="container response">
+  {{response}}
+</div>
