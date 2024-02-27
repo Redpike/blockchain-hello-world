@@ -164,7 +164,7 @@ curl -X 'GET' 'http://localhost:8080/api/t4d/v1/hello-world/0x111111111111111111
 Store new value of message:
 
 ```shell
-curl -X 'PUT' 'http://localhost:8080/api/t4d/v1/hello-world/0x1111111111111111111111111111111111111111/message' -H 'accept: */*' -H 'Content-Type: application/json' -d '{"message": "new value"}'
+curl -X 'PUT' 'http://localhost:8080/api/t4d/v1/hello-world/0x577C66469b5df2781B3a77a9dC825eC2de76c4a4/message' -H 'accept: */*' -H 'Content-Type: application/json' -d '{"message": "new value 3"}'
 ```
 
 ### 3.3. Frontend

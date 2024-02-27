@@ -44,6 +44,7 @@ export class HelloWorldComponent implements OnInit {
     if (!!newMessage) {
       eth_send(this.web3, CONTRACT_ADDRESS, FUNC_UPDATE, [newMessage])
         .then((encoded: TransactionReceipt | undefined) => {
+          // TODO Do something with response
           console.log(encoded);
         });
     }
