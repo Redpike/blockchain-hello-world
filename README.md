@@ -35,7 +35,7 @@ Technologies:
 
 ```text
 Angular 17.2.1
-Web3 x.x.x
+Web3 4.5.0
 Metamask (Firefox, Chromium-based or Opera)
 ```
 
