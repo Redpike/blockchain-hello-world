@@ -21,6 +21,10 @@ export class Web3Component implements OnInit {
     this.web3 = inject(WEB3);
   }
 
+  private static formatAddress(address: string): string {
+    return `${address.substring(0, 7)}...${address.substring(38)}`
+  }
+
   ngOnInit(): void {
     this.fetchMetaMaskData().then();
 
@@ -37,13 +41,14 @@ export class Web3Component implements OnInit {
 
   private async fetchMetaMaskData(): Promise<void> {
     const accounts: string[] = await this.web3.eth.getAccounts();
-    this.selectedAccount = accounts.length ? accounts[0] : '';
+    const account: string = accounts[0];
+    this.selectedAccount = accounts.length ? Web3Component.formatAddress(account) : '';
 
     const chainId: bigint = await this.web3.eth.getChainId();
     this.selectedChain = '' + chainId;
 
     if (this.selectedAccount) {
-      const balance: bigint = await this.web3.eth.getBalance(this.selectedAccount);
+      const balance: bigint = await this.web3.eth.getBalance(account);
       this.balance = this.web3.utils.fromWei(balance, 'ether') + ' ETH';
     }
 

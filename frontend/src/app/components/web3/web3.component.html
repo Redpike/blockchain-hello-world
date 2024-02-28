@@ -1,7 +1,13 @@
-<div class="container">
-  <div class="account-details">
-    <div class="account-address">{{selectedAccount}}</div>
-    <div class="chain">{{selectedChain}}</div>
-    <div class="balance">{{balance}}</div>
+<div class="container flex justify-center" xmlns="http://www.w3.org/1999/html">
+  <div class="account-details flex flex-row w-9/12">
+    <div class="account-address">
+      <span>Address: </span><span>{{ selectedAccount }}</span>
+    </div>
+    <div class="chain">
+      <span>ChainID: </span><span>{{ selectedChain }}</span>
+    </div>
+    <div class="balance">
+      <span>Balance: </span><span>{{ balance }}</span>
+    </div>
   </div>
 </div>
