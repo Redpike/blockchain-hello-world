@@ -145,11 +145,7 @@ Open web browser [http://localhost:4200](http://localhost:4200)
 
 ## 3. Testing
 
-### 3.1. Blockchain
-
-
-
-### 3.2. Backend
+### 3.1. Backend
 
 OpenAPI:
 
@@ -167,4 +163,4 @@ Store new value of message:
 curl -X 'PUT' 'http://localhost:8080/api/t4d/v1/hello-world/{{CONTRACT_ADDRESS}}/message' -H 'accept: */*' -H 'Content-Type: application/json' -d '{"message": "new value 3"}'
 ```
 
-### 3.3. Frontend
+### 3.2. Frontend
