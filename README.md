@@ -164,3 +164,7 @@ curl -X 'PUT' 'http://localhost:8080/api/t4d/v1/hello-world/{{CONTRACT_ADDRESS}}
 ```
 
 ### 3.2. Frontend
+
+Open web browser [http://localhost:4200](http://localhost:4200):
+
+![Angular application](misc/angular-demo.png)
