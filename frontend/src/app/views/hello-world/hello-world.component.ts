@@ -1,7 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {TransactionReceipt, Web3} from 'web3';
+import {AbiItem, Contract, TransactionReceipt, Web3} from 'web3';
 import {decodeResponse, eth_call, eth_send, EthCallResponse, WEB3} from '../../utils/web3';
-import {CONTRACT_ADDRESS, FUNC_MESSAGE, FUNC_UPDATE} from './types/hello-world-abi.types';
+import {ABI, CONTRACT_ADDRESS, FUNC_MESSAGE, FUNC_UPDATE} from './types/hello-world-abi.types';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -16,6 +16,8 @@ export class HelloWorldComponent implements OnInit {
   form: FormGroup;
   messageFC: FormControl;
 
+  helloWorldContract: Contract<AbiItem[]>;
+
   response: string = '';
 
   constructor(private readonly formBuilder: FormBuilder) {
@@ -28,9 +30,30 @@ export class HelloWorldComponent implements OnInit {
     this.form = this.formBuilder.group({
       message: this.messageFC
     });
+
+    this.helloWorldContract = new this.web3.eth.Contract<AbiItem[]>(ABI, CONTRACT_ADDRESS);
   }
 
   getMessage(): void {
+    // 1st implementation
+    this.getMessagePureWeb3();
+
+    // 2nd implementation
+    // this.getMessageContract();
+  }
+
+  async updateMessage(): Promise<void> {
+    const newMessage: string | null | undefined = this.messageFC.value;
+    if (!!newMessage) {
+      // 1st implementation
+      this.updateMessagePureWeb3(newMessage);
+
+      // 2nd implementation
+      // this.updateMessageContract(newMessage).then();
+    }
+  }
+
+  private getMessagePureWeb3(): void {
     eth_call(this.web3, CONTRACT_ADDRESS, FUNC_MESSAGE)
       .then((encoded: string) => {
         // @ts-ignore
@@ -39,14 +62,36 @@ export class HelloWorldComponent implements OnInit {
       });
   }
 
-  updateMessage(): void {
-    const newMessage: string | null | undefined = this.messageFC.value;
-    if (!!newMessage) {
-      eth_send(this.web3, CONTRACT_ADDRESS, FUNC_UPDATE, [newMessage])
-        .then((encoded: TransactionReceipt | undefined) => {
-          // TODO Do something with response
-          console.log(encoded);
-        });
-    }
+  private getMessageContract(): void {
+    // @ts-ignore
+    this.helloWorldContract.methods.message()
+      .call()
+      .then((output) => this.response = '' + output)
+      .catch(err => console.error(err));
+  }
+
+  private updateMessagePureWeb3(newMessage: string): void {
+    eth_send(this.web3, CONTRACT_ADDRESS, FUNC_UPDATE, [newMessage])
+      .then((encoded: TransactionReceipt | undefined) => {
+        // TODO Do something with response
+        console.log(encoded);
+      });
+  }
+
+  private async updateMessageContract(newMessage: string): Promise<void> {
+    const accounts: string[] = await this.web3.eth.getAccounts();
+    const account: string = accounts[0];
+
+    const gasPrice: string = await this.web3.eth.estimateGas({}) + '';
+
+    // @ts-ignore
+    this.helloWorldContract.methods.update(newMessage)
+      .send({
+        from: account,
+        gasPrice: gasPrice
+      })
+      .on('transactionHash', (transactionHash: string) => console.log(transactionHash))
+      .then((receipt: TransactionReceipt) => console.log(receipt))
+      .catch(err => console.error(err));
   }
 }
