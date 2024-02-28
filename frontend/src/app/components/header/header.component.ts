@@ -9,8 +9,7 @@ import {NgOptimizedImage} from '@angular/common';
     Web3Component,
     NgOptimizedImage
   ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent {
 

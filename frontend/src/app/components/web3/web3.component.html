@@ -1,13 +1,15 @@
-<div class="container flex justify-center" xmlns="http://www.w3.org/1999/html">
-  <div class="account-details flex flex-row w-9/12 font-sans">
-    <div class="account-address">
-      <span class="font-bold text-red-700">Address: </span><span class="text-gray-700">{{ selectedAccount }}</span>
-    </div>
-    <div class="chain">
-      <span class="font-bold text-yellow-700">ChainID: </span><span class="text-gray-700">{{ selectedChain }}</span>
-    </div>
-    <div class="balance">
-      <span class="font-bold text-lime-700">Balance: </span><span class="text-gray-700">{{ balance }}</span>
+<div class="container mx-auto mt-8 card shadow-xl p-8 transition ease-in-out duration-500 delay-200 hover:-translate-y-1">
+  <div class="flex w-full justify-center">
+    <div class="account-details flex flex-row font-sans mx-auto">
+      <div class="account-address mx-2">
+        <span class="font-bold text-red-700">Address: </span><span class="text-gray-700">{{ selectedAccount }}</span>
+      </div>
+      <div class="chain mx-2">
+        <span class="font-bold text-yellow-700">ChainID: </span><span class="text-gray-700">{{ selectedChain }}</span>
+      </div>
+      <div class="balance mx-2">
+        <span class="font-bold text-lime-700">Balance: </span><span class="text-gray-700">{{ balance }}</span>
+      </div>
     </div>
   </div>
 </div>

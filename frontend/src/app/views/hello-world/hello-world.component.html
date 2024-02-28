@@ -1,20 +1,23 @@
-<div>Hello World</div>
-
-<div class="container form flex justify-center">
-  <div class="w-9/12">
-    <form [formGroup]="form">
-      <div class="method message">
-        <button (click)="getMessage()">Get message</button>
-      </div>
-
-      <div class="method update">
-        <input [formControl]="messageFC">
-        <button (click)="updateMessage()">Update</button>
-      </div>
-    </form>
+<div
+  class="container mx-auto mt-8 card shadow-xl p-8 transition ease-in-out duration-500 delay-200 hover:-translate-y-1">
+  <div class="header">
+    <h2 class="text-2xl">HelloWorld</h2>
   </div>
-</div>
 
-<div class="container response flex">
-  {{ response }}
+  <div class="mt-4 flex flex-row w-full">
+    <div class="method message w-2/4">
+      <button class="btn btn-accent uppercase" (click)="getMessage()">Get message</button>
+      <div class="mt-8">
+        <span class="italic font-semibold text-sky-800">Response:</span> {{ response }}
+      </div>
+    </div>
+
+    <div class="method update w-2/4">
+      <form [formGroup]="form">
+        <input type="text" placeholder="New message"
+               class="input input-bordered w-full max-w-xs mr-2" [formControl]="messageFC">
+        <button class="btn btn-accent uppercase" (click)="updateMessage()">Update</button>
+      </form>
+    </div>
+  </div>
 </div>

@@ -7,8 +7,7 @@ import {Web3Service} from '../../services/web3.service';
   selector: 'app-web3',
   standalone: true,
   imports: [],
-  templateUrl: './web3.component.html',
-  styleUrl: './web3.component.scss'
+  templateUrl: './web3.component.html'
 })
 export class Web3Component implements OnInit, OnDestroy {
 
