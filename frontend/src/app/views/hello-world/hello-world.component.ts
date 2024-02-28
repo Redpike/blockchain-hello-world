@@ -3,6 +3,7 @@ import {AbiItem, Contract, TransactionReceipt, Web3} from 'web3';
 import {decodeResponse, eth_call, eth_send, EthCallResponse, WEB3} from '../../utils/web3';
 import {ABI, CONTRACT_ADDRESS, FUNC_MESSAGE, FUNC_UPDATE} from './types/hello-world-abi.types';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {Web3Service} from '../../services/web3.service';
 
 @Component({
   selector: 'app-hello-world',
@@ -11,8 +12,6 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 })
 export class HelloWorldComponent implements OnInit {
 
-  private readonly web3: Web3;
-
   form: FormGroup;
   messageFC: FormControl;
 
@@ -20,8 +19,10 @@ export class HelloWorldComponent implements OnInit {
 
   response: string = '';
 
+  private readonly web3: Web3 = inject(WEB3);
+  private readonly web3Service: Web3Service = inject(Web3Service);
+
   constructor(private readonly formBuilder: FormBuilder) {
-    this.web3 = inject(WEB3);
   }
 
   ngOnInit(): void {
@@ -73,8 +74,12 @@ export class HelloWorldComponent implements OnInit {
   private updateMessagePureWeb3(newMessage: string): void {
     eth_send(this.web3, CONTRACT_ADDRESS, FUNC_UPDATE, [newMessage])
       .then((encoded: TransactionReceipt | undefined) => {
-        // TODO Do something with response
+        this.web3Service.changeTransactionState(true);
         console.log(encoded);
+      })
+      .catch(err => {
+        this.web3Service.changeTransactionState(false);
+        console.error(err);
       });
   }
 
@@ -91,7 +96,13 @@ export class HelloWorldComponent implements OnInit {
         gasPrice: gasPrice
       })
       .on('transactionHash', (transactionHash: string) => console.log(transactionHash))
-      .then((receipt: TransactionReceipt) => console.log(receipt))
-      .catch(err => console.error(err));
+      .then((receipt: TransactionReceipt) => {
+        this.web3Service.changeTransactionState(true);
+        console.log(receipt);
+      })
+      .catch(err => {
+        this.web3Service.changeTransactionState(false);
+        console.error(err);
+      });
   }
 }

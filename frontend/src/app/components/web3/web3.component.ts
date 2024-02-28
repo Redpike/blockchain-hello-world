@@ -1,6 +1,7 @@
-import {ChangeDetectorRef, Component, inject, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, effect, inject, OnDestroy, OnInit} from '@angular/core';
 import {Web3} from 'web3';
 import {WEB3} from '../../utils/web3';
+import {Web3Service} from '../../services/web3.service';
 
 @Component({
   selector: 'app-web3',
@@ -9,16 +10,26 @@ import {WEB3} from '../../utils/web3';
   templateUrl: './web3.component.html',
   styleUrl: './web3.component.scss'
 })
-export class Web3Component implements OnInit {
+export class Web3Component implements OnInit, OnDestroy {
 
   selectedAccount: string = '';
   selectedChain: string = '';
   balance: string = '0 ETH';
 
-  private readonly web3: Web3;
+  private readonly web3: Web3 = inject(WEB3);
+  private readonly web3Service: Web3Service = inject(Web3Service);
+
+  private balanceTimeout: NodeJS.Timeout;
 
   constructor(private readonly cdr: ChangeDetectorRef) {
-    this.web3 = inject(WEB3);
+    effect(() => {
+      const isTransactionDone: boolean = this.web3Service.transactionDone();
+      if (isTransactionDone) {
+        this.balanceTimeout = setTimeout(() => {
+          this.fetchMetaMaskData().then();
+        }, 5_000)
+      }
+    });
   }
 
   private static formatAddress(address: string): string {
@@ -37,6 +48,10 @@ export class Web3Component implements OnInit {
     ethereum.on('chainChanged', () => {
       this.fetchMetaMaskData().then();
     });
+  }
+
+  ngOnDestroy(): void {
+    clearTimeout(this.balanceTimeout);
   }
 
   private async fetchMetaMaskData(): Promise<void> {

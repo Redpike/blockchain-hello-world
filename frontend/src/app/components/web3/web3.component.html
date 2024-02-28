@@ -1,13 +1,13 @@
 <div class="container flex justify-center" xmlns="http://www.w3.org/1999/html">
-  <div class="account-details flex flex-row w-9/12">
+  <div class="account-details flex flex-row w-9/12 font-sans">
     <div class="account-address">
-      <span>Address: </span><span>{{ selectedAccount }}</span>
+      <span class="font-bold text-red-700">Address: </span><span class="text-gray-700">{{ selectedAccount }}</span>
     </div>
     <div class="chain">
-      <span>ChainID: </span><span>{{ selectedChain }}</span>
+      <span class="font-bold text-yellow-700">ChainID: </span><span class="text-gray-700">{{ selectedChain }}</span>
     </div>
     <div class="balance">
-      <span>Balance: </span><span>{{ balance }}</span>
+      <span class="font-bold text-lime-700">Balance: </span><span class="text-gray-700">{{ balance }}</span>
     </div>
   </div>
 </div>
