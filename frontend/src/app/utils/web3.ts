@@ -1,8 +1,6 @@
 import {InjectionToken} from '@angular/core';
 import {AbiItem, AbiOutput, TransactionReceipt, Web3} from 'web3';
 
-export type GANACHE_CHAIN_ID = '1337';
-
 export interface EthCallResponse {
   [key: string]: unknown;
 }
@@ -27,7 +25,7 @@ export const eth_call = (web3: Web3, address: string, abi: AbiItem, params?: str
   }
 
   // @ts-ignore
-  const encodedFunction: string = web3.eth.abi.encodeFunctionCall(abi, params || []);
+  const encodedFunction: string = web3.eth.abi.encodeFunctionCall(abi, params ?? []);
 
   return web3.eth.call({
     data: encodedFunction,
@@ -42,7 +40,7 @@ export const eth_send = async (web3: Web3, address: string, abi: AbiItem, params
   }
 
   // @ts-ignore
-  const encodedFunction: string = web3.eth.abi.encodeFunctionCall(abi, params || []);
+  const encodedFunction: string = web3.eth.abi.encodeFunctionCall(abi, params ?? []);
   const accounts: string[] = await web3.eth.getAccounts();
   const account: string = accounts[0];
   const gasPrice: string = await web3.eth.estimateGas({}) + '';
@@ -56,5 +54,5 @@ export const eth_send = async (web3: Web3, address: string, abi: AbiItem, params
 };
 
 export const decodeResponse = (web3: Web3, response: string, resultTypes: AbiOutput[] | undefined): EthCallResponse => {
-  return web3.eth.abi.decodeParameters(resultTypes || [], response);
+  return web3.eth.abi.decodeParameters(resultTypes ?? [], response);
 };
