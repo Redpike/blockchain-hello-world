@@ -42,7 +42,7 @@ export class HelloWorldComponent implements OnInit {
     // this.getMessageContract();
   }
 
-  async updateMessage(): Promise<void> {
+  updateMessage(): void {
     const newMessage: string | null | undefined = this.messageFC.value;
     if (!!newMessage) {
       // 1st implementation
