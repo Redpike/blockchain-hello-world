@@ -40,7 +40,7 @@ export class Web3Component implements OnInit, OnDestroy {
 
     // @ts-ignore
     const {ethereum} = window;
-    ethereum.on('accountsChanged', (accounts: string[]) => {
+    ethereum.on('accountsChanged', () => {
       this.fetchMetaMaskData().then();
     });
 
