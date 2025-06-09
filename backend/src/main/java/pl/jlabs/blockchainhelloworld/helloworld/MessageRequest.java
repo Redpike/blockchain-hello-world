@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld.helloworld;
+package pl.jlabs.blockchainhelloworld.helloworld;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

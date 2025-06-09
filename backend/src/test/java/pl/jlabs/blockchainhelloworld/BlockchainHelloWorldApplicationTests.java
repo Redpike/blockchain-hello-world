@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld;
+package pl.jlabs.blockchainhelloworld;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

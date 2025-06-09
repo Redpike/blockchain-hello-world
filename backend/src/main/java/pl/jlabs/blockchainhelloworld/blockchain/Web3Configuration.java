@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld.blockchain;
+package pl.jlabs.blockchainhelloworld.blockchain;
 
 import java.util.concurrent.TimeUnit;
 

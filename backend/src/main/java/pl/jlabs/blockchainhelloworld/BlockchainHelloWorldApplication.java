@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld;
+package pl.jlabs.blockchainhelloworld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

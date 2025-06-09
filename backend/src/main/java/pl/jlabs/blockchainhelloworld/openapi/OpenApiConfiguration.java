@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld.openapi;
+package pl.jlabs.blockchainhelloworld.openapi;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;

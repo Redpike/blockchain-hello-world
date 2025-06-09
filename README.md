@@ -1,4 +1,4 @@
-# #91 Talk4Devs - Blockchain Hello World
+# Blockchain Hello World
 
 ## 1. Project structure
 
@@ -21,10 +21,10 @@ It's Spring Boot MVC application with few endpoints for managing state of smart 
 Technologies:
 
 ```text
-Java 17
-Maven 3.9.3
-Spring Boot 3.2.3
-Web3j 4.11.0
+Java 21
+Maven 3.9.9
+Spring Boot 3.5.0
+Web3j 4.14.0
 ```
 
 ### 1.3. Frontend
@@ -34,8 +34,8 @@ Angular application that contains integration with blockchain via Metamask and W
 Technologies:
 
 ```text
-Angular 17.2.1
-Web3 4.5.0
+Angular 19.2.14
+Web3 4.16.0
 Metamask (Firefox, Chromium-based or Opera)
 ```
 
@@ -55,8 +55,8 @@ Build Ganache docker container:
 
 ```shell
 cd ./blockchain
-docker build -t talk4devs-ganache:1.0.0 .
-docker run --name talk4devs-ganache -p 18545:8545 -d talk4devs-ganache:1.0.0
+docker build -t blockchaon-hello-world-ganache:1.0.0 .
+docker run --name blockchaon-hello-world-ganache -p 18545:8545 -d blockchaon-hello-world-ganache:1.0.0
 cd ..
 ```
 
@@ -119,7 +119,7 @@ cd ..
 Run application via console:
 ```shell
 cd ./backend
-java -jar target/blockchain-hello-world-1.0.0-SNAPSHOT.jar
+java -jar target/blockchain-hello-world-1.0.0.jar
 ```
 
 Open web browser [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)

@@ -1,4 +1,4 @@
-package pl.jlabs.talk4devs.blockchainhelloworld.helloworld;
+package pl.jlabs.blockchainhelloworld.helloworld;
 
 import java.math.BigInteger;
 
@@ -8,8 +8,8 @@ import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.tx.gas.StaticGasProvider;
-import pl.jlabs.talk4devs.blockchainhelloworld.blockchain.BlockchainConfiguration;
-import pl.jlabs.talk4devs.blockchainhelloworld.blockchain.BlockchainAccount;
+import pl.jlabs.blockchainhelloworld.blockchain.BlockchainConfiguration;
+import pl.jlabs.blockchainhelloworld.blockchain.BlockchainAccount;
 import org.springframework.stereotype.Component;
 
 @Component
