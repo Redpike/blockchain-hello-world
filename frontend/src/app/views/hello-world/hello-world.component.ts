@@ -6,8 +6,8 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {Web3Service} from '../../services/web3.service';
 
 @Component({
-  selector: 'app-hello-world',
-  templateUrl: './hello-world.component.html'
+    selector: 'app-hello-world',
+    templateUrl: './hello-world.component.html'
 })
 export class HelloWorldComponent implements OnInit {
 
