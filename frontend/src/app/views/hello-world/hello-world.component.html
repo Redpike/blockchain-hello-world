@@ -18,7 +18,7 @@
     <div class="method update w-2/4">
       <form [formGroup]="form">
         <input type="text" placeholder="New message"
-               class="border border-solid border-yellow-500 w-full max-w-xs mr-2 p-2" [formControl]="messageFC">
+               class="border border-solid border-yellow-500 w-full max-w-xs mr-2 p-2 rounded-sm" [formControl]="messageFC">
         <button
           class="text-white bg-yellow-500 hover:bg-yellow-400 cursor-pointer uppercase p-2 rounded-sm transition-background-color duration-300"
           (click)="updateMessage()">Update
