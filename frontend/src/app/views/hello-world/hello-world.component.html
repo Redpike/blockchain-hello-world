@@ -6,7 +6,10 @@
 
   <div class="mt-4 flex flex-row w-full">
     <div class="method message w-2/4">
-      <button class="btn btn-accent uppercase" (click)="getMessage()">Get message</button>
+      <button
+        class="text-white bg-yellow-500 hover:bg-yellow-400 cursor-pointer uppercase p-2 rounded-sm transition-background-color duration-300"
+        (click)="getMessage()">Get message
+      </button>
       <div class="mt-8">
         <span class="italic font-semibold text-sky-800">Response:</span> {{ response }}
       </div>
@@ -15,8 +18,11 @@
     <div class="method update w-2/4">
       <form [formGroup]="form">
         <input type="text" placeholder="New message"
-               class="input input-bordered w-full max-w-xs mr-2" [formControl]="messageFC">
-        <button class="btn btn-accent uppercase" (click)="updateMessage()">Update</button>
+               class="border border-solid border-yellow-500 w-full max-w-xs mr-2 p-2" [formControl]="messageFC">
+        <button
+          class="text-white bg-yellow-500 hover:bg-yellow-400 cursor-pointer uppercase p-2 rounded-sm transition-background-color duration-300"
+          (click)="updateMessage()">Update
+        </button>
       </form>
     </div>
   </div>
