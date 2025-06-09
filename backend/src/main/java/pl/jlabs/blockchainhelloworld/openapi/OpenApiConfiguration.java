@@ -19,7 +19,7 @@ public class OpenApiConfiguration {
         return new Info()
                 .title("Blockchain Hello World")
                 .description("Provides integration between Spring Boot and Blockchain via Web3 Provider.")
-                .version("1.0.0-SNAPSHOT")
+                .version("1.0.0")
                 .contact(apiContact());
     }
 
