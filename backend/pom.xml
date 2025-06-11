@@ -96,12 +96,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>Consensys</id>
-            <url>https://artifacts.consensys.net/public/maven/maven/</url>
-        </repository>
-    </repositories>
-
 </project>
