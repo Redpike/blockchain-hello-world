@@ -10,7 +10,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        talk4devs: {
+        devoxx: {
           "primary": "#a600ff",
           "secondary": "#00b6ff",
           "accent": "#ceb200",

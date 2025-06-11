@@ -102,7 +102,7 @@ Deploy smart contract on Your local blockchain:
 
 ```shell
 cd ./blockchain
-npx hardhat run scripts/deploy.ts --network talk4devs
+npx hardhat run scripts/deploy.ts --network devoxx
 cd ..
 ```
 
